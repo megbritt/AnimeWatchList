@@ -5,14 +5,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AJAX Project</title>
   <link rel="icon" href="images/favicon.ico">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/fonts.css">
 </head>
 <body>
   <header>
+    <div class="bg-blue">
+      <div class="container">
+        <div class="row">
+          <button class="hidden">AnimeWatchList</button>
+        </div>
+      </div>
+    </div>
   </header>
   <main>
+    <div class="search-form">
+      <div class="container">
+        <div class="row justify-center">
+          <h1>AnimeWatchList</h1>
+        </div>
+        <form>
+          <div class="row justify-center">
+            <input type="text" placeholder="Enter a title..." class="search-input">
+            <button type="submit">
+              <img src="images/magnifying-glass.png" alt="Search Button" class="search-button align-center">
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
   </main>
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>

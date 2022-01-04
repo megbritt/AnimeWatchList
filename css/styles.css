@@ -1,0 +1,46 @@
+h1 {
+  font-family: AGRevueCyr, sans-serif;
+  color: white;
+  cursor: default;
+  font-size: 1.5rem;
+}
+
+img {
+  width: 100%;
+}
+
+.align-center {
+  align-self: center;
+}
+
+.bg-blue {
+  background-color: #2e51a2;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+.search-button {
+  width: 1rem;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.5rem;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: rgb(255, 255, 255);
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+  h1 {
+    font-size: 4rem;
+  }
+}
