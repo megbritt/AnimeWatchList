@@ -2,32 +2,26 @@ h1 {
   font-family: AGRevueCyr, sans-serif;
   color: white;
   cursor: default;
-  font-size: 1.5rem;
+  font-size: 2.5rem;
 }
 
-img {
-  width: 100%;
+h3,
+h1,
+span {
+  color: white;
 }
 
-.align-center {
-  align-self: center;
-}
-
-.bg-blue {
-  background-color: #2e51a2;
-}
-
-.hidden {
-  opacity: 0;
-}
-
-.search-button {
-  width: 1rem;
+.logo-button {
+  background-color: rgb(245, 197, 24);
+  padding: 0.5rem;
+  border-radius: 3px;
+  border: none;
+  font-family: AGRevueCyr, cursive;
 }
 
 .search-input {
   width: 100%;
-  padding: 0.5rem;
+  padding: 1rem;
 }
 
 .search-input:focus {
@@ -35,12 +29,131 @@ img {
   border-color: rgb(255, 255, 255);
 }
 
+.search-button {
+  width: 1rem;
+}
+
+.info-button {
+  background-color: rgb(245, 197, 24);
+  border: none;
+  border-radius: 3px;
+  width: 65px;
+  padding: 0.3rem;
+}
+
 button:hover {
   cursor: pointer;
+}
+
+.results-text {
+  font-weight: 900;
+  font-size: 2rem;
+  font-family: "Baloo Chettan 2", sans-serif;
+  margin: 0;
+  color: #9c9c9e;
+}
+
+.result-name {
+  font-size: 0.88rem;
+}
+
+.result-name:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.result-card {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+  padding-bottom: 1rem;
+}
+
+.result-poster {
+  width: 100px;
+  margin-right: 1.5rem;
+  margin-left: 1.5rem;
+}
+
+.result-overview {
+  color: white;
+  font-size: 0.8rem;
+}
+
+li {
+  list-style: none;
+  background-color: rgb(52, 73, 94);
+  border-radius: 15px;
+  padding: 15px;
+  margin: 35px;
+}
+
+ul {
+  padding-inline-start: 0;
+}
+
+.bg-blue {
+  background-color: #2e51a2;
+}
+
+.bg-dark-cyan {
+  background-color: #2c3e50;
+}
+
+.mywatchlist-button {
+  background-color: transparent;
+  border: none;
+  font-size: 25px;
+  font-family: AGRevueCyr, sans-serif;
+  color: white;
+}
+
+.nav-bar {
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
 @media screen and (min-width: 768px) {
   h1 {
     font-size: 4rem;
+  }
+
+  .container {
+    width: 80%;
+  }
+
+  .text-align-center {
+    text-align: start;
+  }
+
+  .result-card {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+  }
+
+  .result-poster {
+    width: 170px;
+    margin-right: 3rem;
+    margin-left: 3rem;
+    margin-top: 1rem;
+  }
+
+  .result-name {
+    font-size: 1.7rem;
+  }
+
+  .result-overview {
+    font-size: 1rem;
+  }
+
+  .line-height-1 {
+    line-height: 20px;
+  }
+
+  .mywatchlist-button {
+    font-size: 30px;
   }
 }
