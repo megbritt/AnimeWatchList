@@ -7,17 +7,18 @@
   <link rel="icon" href="images/favicon.ico">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+Chettan+2:wght@600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/fonts.css">
 </head>
-<body>
+<body class="bg-blue">
   <header>
     <div class="bg-blue">
       <div class="container">
-        <div class="row">
-          <button class="hidden">AnimeWatchList</button>
+        <div class="nav-bar row hidden">
+          <button class="mywatchlist-button">AnimeWatchList</button>
         </div>
       </div>
     </div>
@@ -36,6 +37,17 @@
             </button>
           </div>
         </form>
+      </div>
+    </div>
+    <div data-view="search-results" class="view hidden">
+      <div class="container">
+        <div class="row margin-top space-between align-center">
+          <div class="row search-results-text-box">
+            <h3 class="results-text"></h3>
+          </div>
+        </div>
+        <ul class="searched-list">
+        </ul>
       </div>
     </div>
   </main>
