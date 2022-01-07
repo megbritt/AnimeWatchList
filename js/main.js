@@ -21,7 +21,6 @@ function clickBackButton(event) {
     $searchedList.textContent = '';
   } else if (data.view === 'anime-info') {
     switchViews('search-results');
-
     data.view = 'search-results';
   }
 }
