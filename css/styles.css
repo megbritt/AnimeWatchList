@@ -5,18 +5,29 @@ h1 {
   font-size: 2.5rem;
 }
 
-h3,
 h1,
-span {
+h2,
+h3,
+h4,
+span,
+p {
   color: white;
 }
 
-.logo-button {
-  background-color: rgb(245, 197, 24);
-  padding: 0.5rem;
-  border-radius: 3px;
-  border: none;
-  font-family: AGRevueCyr, cursive;
+h2 {
+  font-size: 1.4rem;
+}
+
+h3 {
+  font-size: 0.88rem;
+}
+
+h4 {
+  margin: 0;
+}
+
+.page-header {
+  font-weight: 300;
 }
 
 .search-input {
@@ -70,15 +81,15 @@ button:hover {
   padding-bottom: 1rem;
 }
 
-.result-poster {
+.result-poster,
+.info-page-poster {
   width: 100px;
   margin-right: 1.5rem;
   margin-left: 1.5rem;
 }
 
-.result-overview {
-  color: white;
-  font-size: 0.8rem;
+.flex-end {
+  justify-content: flex-end;
 }
 
 li {
@@ -112,6 +123,21 @@ ul {
 .nav-bar {
   padding-top: 15px;
   padding-bottom: 15px;
+}
+
+.back-button {
+  background-color: rgb(52, 73, 94);
+  border: none;
+  border-radius: 9px;
+  color: #ffff;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 12px;
+}
+
+.synopsis-title {
+  font-weight: 700;
+  margin-top: 25px;
 }
 
 @media screen and (min-width: 768px) {
@@ -151,6 +177,14 @@ ul {
 
   .line-height-1 {
     line-height: 20px;
+  }
+
+  .info-page-poster {
+    width: 250px;
+  }
+
+  .mobile-row {
+    display: flex;
   }
 
   .mywatchlist-button {
