@@ -12,6 +12,30 @@
   margin: 1rem 0;
 }
 
+.margin-top-2 {
+  margin: 0.5rem 0;
+}
+
+.margin-top-3 {
+  margin: 1.5rem;
+}
+
+.margin-right-5px {
+  margin-right: 5px;
+}
+
+.margin-right-10px {
+  margin-right: 10px;
+}
+
+.margin-right-20px {
+  margin-right: 20px;
+}
+
+.margin-left-5px {
+  margin-left: 5px;
+}
+
 .justify-center {
   justify-content: center;
 }
@@ -34,4 +58,16 @@
 
 .text-align-center {
   text-align: center;
+}
+
+.padding-top {
+  padding: 1rem 0;
+}
+
+.line-height-1 {
+  line-height: 20px;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
 }

@@ -4,7 +4,7 @@ var data = {
   view: 'search-form',
   searchName: '',
   searchResult: [],
-  searched: {}
+  clickedAnime: {}
 };
 
 var prevDataJSON = localStorage.getItem('awl-local-storage');
