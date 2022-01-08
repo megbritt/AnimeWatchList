@@ -121,8 +121,14 @@ ul {
 }
 
 .nav-bar {
+  width: 100%;
   padding-top: 15px;
   padding-bottom: 15px;
+}
+
+.watch-list-icon {
+  width: 30px;
+  height: 28px;
 }
 
 .back-button {
@@ -189,5 +195,10 @@ ul {
 
   .mywatchlist-button {
     font-size: 30px;
+  }
+
+  .watch-list-icon {
+    width: 35px;
+    height: 30px;
   }
 }

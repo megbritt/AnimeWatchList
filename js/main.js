@@ -42,7 +42,7 @@ function handleSubmit() {
   data.view = 'search-results';
   $resultText.textContent = 'Search results for  "' + $searchInput.value + '"';
   document.querySelector('body').className = 'bg-dark-cyan';
-  document.querySelector('.nav-bar').className = 'nav-bar row view';
+  document.querySelector('.nav-bar').className = 'nav-bar row view space-between';
 }
 
 $form.addEventListener('submit', handleSubmit);
