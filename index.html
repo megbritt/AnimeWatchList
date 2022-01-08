@@ -19,7 +19,7 @@
       <div class="container">
         <div class="nav-bar row space-between hidden">
           <button class="mywatchlist-button">AnimeWatchList</button>
-          <input type="image" src="images/white-watch-list-icon.png" class="watch-list-icon" />
+          <input type="image" src="images/white-watch-list-icon.png" class="watch-list-icon watchlist-button" />
         </div>
       </div>
     </div>
@@ -67,13 +67,39 @@
             <p>Score: <span class="score"></span></p>
             <p><span class="members"></span></p>
             <p>Genres: <span class="genres"></span></p>
+            <button class="plus-button"><i class="fas fa-plus"></i>&nbsp Add to List</button>
             <p class="synopsis-title">Synopsis:</p>
             <span class="synopsis"></span>
           </div>
         </div>
       </div>
     </div>
-    <div data-view="watch-list" class="view hidden"></div>
+    <div data-view="watchlist" class="view hidden">
+      <div class="container">
+        <div class="row margin-top-bottom-2 justify-space-between align-center">
+          <div class="row">
+            <div class="yellow-square margin-right-10px"></div>
+          </div>
+        </div>
+        <div class="no-watchlist-message text-align-center">
+          <p class="empty-watchlist-message">Your anime list is empty</p>
+          <span>Start adding anime to your list by pressing the "+ Add to List"
+            button. Your added anime will show here.</span>
+        </div>
+        <ul class="watchlist">
+        </ul>
+      </div>
+    </div>
+    <div class="modal2 row hidden">
+      <div class="overlay">
+        <div class="modal">
+          <p class="overlay-text">
+            ~ Anime Added to Watchlist ~
+          </p>
+          <img src="images/blue-checkmark.png" class="blue-checkmark">
+        </div>
+      </div>
+    </div>
   </main>
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>

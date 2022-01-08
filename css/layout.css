@@ -67,3 +67,7 @@
 .flex-wrap {
   flex-wrap: wrap;
 }
+
+.padding-bottom {
+  padding-bottom: 1rem;
+}
