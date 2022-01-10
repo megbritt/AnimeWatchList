@@ -10,6 +10,11 @@ var $infoScore = document.querySelector('.score');
 var $infoMembers = document.querySelector('.members');
 var $infoGenres = document.querySelector('.genres');
 var $infoSynopsis = document.querySelector('.synopsis');
+var $plusButton = document.querySelector('.plus-button');
+var $watchlistButton = document.querySelector('.watchlist-button');
+var $watchlistContainer = document.querySelector('.watchlist');
+var $noWatchListMessage = document.querySelector('.no-watchlist-message');
+var $overlay = document.querySelector('.modal2');
 
 function clickBackButton(event) {
   if (event.target.className !== 'back-button') {
@@ -21,12 +26,39 @@ function clickBackButton(event) {
     $searchedList.textContent = '';
   } else if (data.view === 'anime-info') {
     switchViews('search-results');
-
     data.view = 'search-results';
   }
 }
 
 document.addEventListener('click', clickBackButton);
+
+function handlePlusButton(event) {
+  var watchlistObj = {
+    posterPath: data.clickedAnime.image_url,
+    title: data.clickedAnime.title,
+    type: data.clickedAnime.type,
+    episodes: data.clickedAnime.episodes,
+    score: data.clickedAnime.score,
+    members: data.clickedAnime.members
+  };
+  data.watchlist = watchlistObj;
+  data.watchlistList.push(data.watchlist);
+  generateWatchlist(watchlistObj);
+
+  $overlay.className = 'modal2 overlay view';
+}
+
+$plusButton.addEventListener('click', handlePlusButton);
+
+function clickWatchlistButton(event) {
+  switchViews('watchlist');
+  data.view = 'watchlist';
+  if (data.watchlistList.length > 0) {
+    $noWatchListMessage.className = 'view hidden';
+  }
+}
+
+$watchlistButton.addEventListener('click', clickWatchlistButton);
 
 function handleSubmit() {
   event.preventDefault();
@@ -43,7 +75,7 @@ function handleSubmit() {
   data.view = 'search-results';
   $resultText.textContent = 'Search results for  "' + $searchInput.value + '"';
   document.querySelector('body').className = 'bg-dark-cyan';
-  document.querySelector('.nav-bar').className = 'nav-bar row view';
+  document.querySelector('.nav-bar').className = 'nav-bar row view space-between';
 }
 
 $form.addEventListener('submit', handleSubmit);
@@ -178,3 +210,45 @@ function generateInfoPage(data) {
   $infoSynopsis.textContent = data.clickedAnime.synopsis;
 
 }
+
+function generateWatchlist(entry) {
+  var $root = document.createElement('li');
+
+  var $watchListCardDiv = document.createElement('div');
+  $watchListCardDiv.className = 'row watchlist-card';
+  $root.appendChild($watchListCardDiv);
+
+  var $watchListImageUrl = document.createElement('img');
+  $watchListImageUrl.className = 'watchlist-poster';
+  $watchListImageUrl.setAttribute('src', entry.posterPath);
+  $watchListCardDiv.appendChild($watchListImageUrl);
+
+  var $watchListDetails = document.createElement('div');
+  $watchListDetails.className = 'watchlist-details';
+  $watchListCardDiv.appendChild($watchListDetails);
+
+  var $watchListTitle = document.createElement('h3');
+  $watchListTitle.className = 'watchlist-name';
+  $watchListTitle.textContent = entry.title;
+  $watchListDetails.appendChild($watchListTitle);
+
+  var $watchListEpisodes = document.createElement('p');
+  $watchListEpisodes.textContent = entry.type + ': ' + entry.episodes;
+  $watchListDetails.appendChild($watchListEpisodes);
+
+  var $watchListOverview = document.createElement('p');
+  $watchListOverview.textContent = 'Score: ' + entry.score;
+  $watchListDetails.appendChild($watchListOverview);
+
+  var $watchListMembers = document.createElement('p');
+  $watchListMembers.textContent = numberWithCommas(entry.members) + ' Members';
+  $watchListOverview.appendChild($watchListMembers);
+
+  $watchlistContainer.prepend($root);
+}
+
+function removeCheckMarkModal(event) {
+  $overlay.className = 'row hidden';
+}
+
+$overlay.addEventListener('click', removeCheckMarkModal);

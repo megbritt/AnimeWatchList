@@ -64,7 +64,8 @@ button:hover {
   color: #9c9c9e;
 }
 
-.result-name {
+.result-name,
+.watchlist-name {
   font-size: 0.88rem;
 }
 
@@ -82,7 +83,8 @@ button:hover {
 }
 
 .result-poster,
-.info-page-poster {
+.info-page-poster,
+.watchlist-poster {
   width: 100px;
   margin-right: 1.5rem;
   margin-left: 1.5rem;
@@ -121,8 +123,14 @@ ul {
 }
 
 .nav-bar {
+  width: 100%;
   padding-top: 15px;
   padding-bottom: 15px;
+}
+
+.watch-list-icon {
+  width: 30px;
+  height: 28px;
 }
 
 .back-button {
@@ -140,6 +148,63 @@ ul {
   margin-top: 25px;
 }
 
+.plus-button {
+  background-color: #2e51a2;
+  border: none;
+  border-radius: 15px;
+  color: white;
+  font-size: 15px;
+  padding: 11px;
+  font-weight: 700;
+}
+
+.watchlist-details {
+  font-size: 0.65rem;
+}
+
+.watchlist-card {
+  padding: 15px;
+  border-radius: 25px;
+}
+
+.fa-bookmark {
+  font-size: 2rem;
+}
+
+.empty-watchlist-message {
+  font-style: italic;
+  margin-top: 25px;
+}
+
+.modal {
+  background-color: rgb(52, 73, 94);
+  width: 200px;
+  text-align: center;
+  padding: 2.5rem;
+  border-radius: 10px;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.blue-checkmark {
+  width: 75px;
+}
+
+.overlay-text {
+  color: white;
+  font-size: 0.65rem;
+}
+
 @media screen and (min-width: 768px) {
   h1 {
     font-size: 4rem;
@@ -150,7 +215,7 @@ ul {
   }
 
   .text-align-center {
-    text-align: start;
+    text-align: center;
   }
 
   .result-card {
@@ -160,14 +225,16 @@ ul {
     align-items: center;
   }
 
-  .result-poster {
+  .result-poster,
+  .watchlist-poster {
     width: 170px;
     margin-right: 3rem;
     margin-left: 3rem;
     margin-top: 1rem;
   }
 
-  .result-name {
+  .result-name,
+  .watchlist-name {
     font-size: 1.7rem;
   }
 
@@ -189,5 +256,31 @@ ul {
 
   .mywatchlist-button {
     font-size: 30px;
+  }
+
+  .watch-list-icon {
+    width: 35px;
+    height: 30px;
+  }
+
+  .watchlist-details {
+    font-size: 1rem;
+  }
+
+  .watchlist-poster {
+    width: 170px;
+  }
+
+  .modal {
+    width: 400px;
+    padding: 2.5rem;
+  }
+
+  .green-checkmark {
+    width: 100px;
+  }
+
+  .overlay-text {
+    font-size: 1.2rem;
   }
 }
