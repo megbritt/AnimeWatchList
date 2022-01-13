@@ -154,8 +154,23 @@ ul {
   font-weight: 700;
 }
 
+.cancel-button,
+.confirm-button {
+  border: none;
+  border-radius: 15px;
+  color: white;
+  font-size: 15px;
+  padding: 15px;
+  font-weight: 700;
+}
+
+.cancel-button {
+  background-color: transparent;
+}
+
 .confirm-button {
   margin-right: 50px;
+  background-color: #0b3eb6;
 }
 
 .watchlist-details {
@@ -282,7 +297,7 @@ ul {
 
   .modal-2 {
     width: 600px;
-    height: 200px;
+    height: 180px;
     padding: 2.5rem;
   }
 

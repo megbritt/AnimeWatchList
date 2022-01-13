@@ -266,7 +266,7 @@ function clickTrashButton(event) {
   if (event.target.className !== 'fas fa-trash-alt') {
     return;
   }
-  $deleteWatchlistOverlay.className = 'row-2 view modal';
+  $deleteWatchlistOverlay.className = 'row-2 view';
   data.animeId = event.target.closest('li').getAttribute('animeId');
 }
 
