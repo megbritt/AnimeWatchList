@@ -6,7 +6,8 @@ var data = {
   searchResult: [],
   clickedAnime: {},
   watchlist: {},
-  watchlistList: []
+  watchlistList: [],
+  animeId: 0
 };
 
 var prevDataJSON = localStorage.getItem('awl-local-storage');

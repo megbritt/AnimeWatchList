@@ -15,6 +15,9 @@ var $watchlistButton = document.querySelector('.watchlist-button');
 var $watchlistContainer = document.querySelector('.watchlist');
 var $noWatchListMessage = document.querySelector('.no-watchlist-message');
 var $overlay = document.querySelector('.modal2');
+var $deleteWatchlistOverlay = document.querySelector('.row-2.hidden');
+var $cancelButton = document.querySelector('.cancel-button');
+var $confirmButton = document.querySelector('.confirm-button');
 
 function clickBackButton(event) {
   if (event.target.className !== 'back-button') {
@@ -39,7 +42,8 @@ function handlePlusButton(event) {
     type: data.clickedAnime.type,
     episodes: data.clickedAnime.episodes,
     score: data.clickedAnime.score,
-    members: data.clickedAnime.members
+    members: data.clickedAnime.members,
+    animeId: data.clickedAnime.mal_id
   };
   data.watchlist = watchlistObj;
   data.watchlistList.push(data.watchlist);
@@ -213,6 +217,7 @@ function generateInfoPage(data) {
 
 function generateWatchlist(entry) {
   var $root = document.createElement('li');
+  $root.setAttribute('animeId', entry.animeId);
 
   var $watchListCardDiv = document.createElement('div');
   $watchListCardDiv.className = 'row watchlist-card';
@@ -244,6 +249,10 @@ function generateWatchlist(entry) {
   $watchListMembers.textContent = numberWithCommas(entry.members) + ' Members';
   $watchListOverview.appendChild($watchListMembers);
 
+  var $watchListTrashButton = document.createElement('i');
+  $watchListTrashButton.className = 'fas fa-trash-alt';
+  $watchListOverview.appendChild($watchListTrashButton);
+
   $watchlistContainer.prepend($root);
 }
 
@@ -252,3 +261,42 @@ function removeCheckMarkModal(event) {
 }
 
 $overlay.addEventListener('click', removeCheckMarkModal);
+
+function clickTrashButton(event) {
+  if (event.target.className !== 'fas fa-trash-alt') {
+    return;
+  }
+  $deleteWatchlistOverlay.className = 'row-2 view';
+  data.animeId = event.target.closest('li').getAttribute('animeId');
+}
+
+document.addEventListener('click', clickTrashButton);
+
+function handleCancelButton(event) {
+  $deleteWatchlistOverlay.className = 'row-2 hidden';
+}
+
+$cancelButton.addEventListener('click', handleCancelButton);
+
+function handleConfirmButton(event) {
+  $deleteWatchlistOverlay.className = 'row-2 hidden';
+  var deleteEntry = document.querySelector('li[animeId' + '=' + '"' + data.animeId + '"' + ']');
+  console.log('data.watchlist before for loop:', data.watchlist);
+  for (var i = 0; i < data.watchlistList.length; i++) {
+    console.log('value of i', i);
+    console.log('data.watchlistList[i].animeId', data.watchlistList[i].animeId);
+    console.log('data.animeId', data.animeId);
+    if (data.watchlistList[i].animeId === data.animeId) {
+      data.watchlistList.splice(i, 1);
+      console.log('data.watchlist spliced');
+    } else {
+      console.log('not spliced yet! data.watchlistList[i].animeId !== data.animeId');
+    }
+  }
+  deleteEntry.remove();
+  console.log('data.watchlist after for loop', data.watchlist);
+  if (data.watchlistList.length === 0) {
+    $noWatchListMessage.className = 'no-watchlist-message text-align-center-2';
+  }
+}
+$confirmButton.addEventListener('click', handleConfirmButton);

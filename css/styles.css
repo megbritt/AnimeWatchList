@@ -44,14 +44,6 @@ h4 {
   width: 1rem;
 }
 
-.info-button {
-  background-color: rgb(245, 197, 24);
-  border: none;
-  border-radius: 3px;
-  width: 65px;
-  padding: 0.3rem;
-}
-
 button:hover {
   cursor: pointer;
 }
@@ -165,10 +157,6 @@ ul {
 .watchlist-card {
   padding: 15px;
   border-radius: 25px;
-}
-
-.fa-bookmark {
-  font-size: 2rem;
 }
 
 .empty-watchlist-message {
