@@ -14,8 +14,8 @@ var $plusButton = document.querySelector('.plus-button');
 var $watchlistButton = document.querySelector('.watchlist-button');
 var $watchlistContainer = document.querySelector('.watchlist');
 var $noWatchListMessage = document.querySelector('.no-watchlist-message');
-var $overlay = document.querySelector('.modal2');
-var $deleteWatchlistOverlay = document.querySelector('.row-2.hidden');
+var $overlay = document.querySelector('.add-modal');
+var $deleteWatchlistOverlay = document.querySelector('.delete-modal');
 var $cancelButton = document.querySelector('.cancel-button');
 var $confirmButton = document.querySelector('.confirm-button');
 
@@ -49,7 +49,7 @@ function handlePlusButton(event) {
   data.watchlistList.push(data.watchlist);
   generateWatchlist(watchlistObj);
 
-  $overlay.className = 'modal2 overlay view';
+  $overlay.className = 'add-modal overlay view';
 }
 
 $plusButton.addEventListener('click', handlePlusButton);
@@ -273,13 +273,13 @@ function clickTrashButton(event) {
 document.addEventListener('click', clickTrashButton);
 
 function handleCancelButton(event) {
-  $deleteWatchlistOverlay.className = 'row-2 hidden';
+  $deleteWatchlistOverlay.className = 'row hidden delete-modal';
 }
 
 $cancelButton.addEventListener('click', handleCancelButton);
 
 function handleConfirmButton(event) {
-  $deleteWatchlistOverlay.className = 'row-2 hidden modal-2';
+  $deleteWatchlistOverlay.className = 'row hidden delete-modal delete-modal-box';
   var deleteEntry = document.querySelector('li[animeId' + '=' + '"' + data.animeId + '"' + ']');
 
   for (var i = 0; i < data.watchlistList.length; i++) {

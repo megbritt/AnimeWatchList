@@ -195,7 +195,7 @@ ul {
   border-radius: 10px;
 }
 
-.modal-2 {
+.delete-modal-box {
   background-color: rgb(52, 73, 94);
   width: 400px;
   text-align: center;
@@ -295,7 +295,7 @@ ul {
     padding: 2.5rem;
   }
 
-  .modal-2 {
+  .delete-modal-box {
     width: 600px;
     height: 180px;
     padding: 2.5rem;
