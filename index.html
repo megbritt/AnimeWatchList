@@ -76,11 +76,6 @@
     </div>
     <div data-view="watchlist" class="view hidden">
       <div class="container">
-        <div class="row margin-top-bottom-2 justify-space-between align-center">
-          <div class="row">
-            <div class="yellow-square margin-right-10px"></div>
-          </div>
-        </div>
         <div class="no-watchlist-message text-align-center">
           <p class="empty-watchlist-message">Your anime list is empty</p>
           <span>Start adding anime to your list by pressing the "+ Add to List"
@@ -90,13 +85,26 @@
         </ul>
       </div>
     </div>
-    <div class="modal2 row hidden">
+    <div class="add-modal row hidden">
       <div class="overlay">
         <div class="modal">
           <p class="overlay-text">
             ~ Anime Added to Watchlist ~
           </p>
           <img src="images/blue-checkmark.png" class="blue-checkmark">
+        </div>
+      </div>
+    </div>
+    <div class="row hidden delete-modal">
+      <div class="overlay">
+        <div class="delete-modal-box">
+          <p class="overlay-text">
+            Are you sure you want to delete this anime?
+          </p>
+          <div class="row margin-top center">
+            <button class="confirm-button">CONFIRM</button>
+            <button class="cancel-button">CANCEL</button>
+          </div>
         </div>
       </div>
     </div>
