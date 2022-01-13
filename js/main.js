@@ -266,7 +266,7 @@ function clickTrashButton(event) {
   if (event.target.className !== 'fas fa-trash-alt') {
     return;
   }
-  $deleteWatchlistOverlay.className = 'row-2 view';
+  $deleteWatchlistOverlay.className = 'row-2 view modal';
   data.animeId = event.target.closest('li').getAttribute('animeId');
 }
 
@@ -279,24 +279,17 @@ function handleCancelButton(event) {
 $cancelButton.addEventListener('click', handleCancelButton);
 
 function handleConfirmButton(event) {
-  $deleteWatchlistOverlay.className = 'row-2 hidden';
+  $deleteWatchlistOverlay.className = 'row-2 hidden modal-2';
   var deleteEntry = document.querySelector('li[animeId' + '=' + '"' + data.animeId + '"' + ']');
-  console.log('data.watchlist before for loop:', data.watchlist);
+
   for (var i = 0; i < data.watchlistList.length; i++) {
-    console.log('value of i', i);
-    console.log('data.watchlistList[i].animeId', data.watchlistList[i].animeId);
-    console.log('data.animeId', data.animeId);
-    if (data.watchlistList[i].animeId === data.animeId) {
+    if (data.watchlistList[i].animeId === parseInt(data.animeId)) {
       data.watchlistList.splice(i, 1);
-      console.log('data.watchlist spliced');
-    } else {
-      console.log('not spliced yet! data.watchlistList[i].animeId !== data.animeId');
     }
   }
   deleteEntry.remove();
-  console.log('data.watchlist after for loop', data.watchlist);
   if (data.watchlistList.length === 0) {
-    $noWatchListMessage.className = 'no-watchlist-message text-align-center-2';
+    $noWatchListMessage.className = 'no-watchlist-message text-align-center';
   }
 }
 $confirmButton.addEventListener('click', handleConfirmButton);

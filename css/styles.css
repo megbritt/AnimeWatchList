@@ -140,6 +140,10 @@ ul {
   margin-top: 25px;
 }
 
+.center {
+  justify-content: center;
+}
+
 .plus-button {
   background-color: #2e51a2;
   border: none;
@@ -148,6 +152,10 @@ ul {
   font-size: 15px;
   padding: 11px;
   font-weight: 700;
+}
+
+.confirm-button {
+  margin-right: 50px;
 }
 
 .watchlist-details {
@@ -167,6 +175,14 @@ ul {
 .modal {
   background-color: rgb(52, 73, 94);
   width: 200px;
+  text-align: center;
+  padding: 2.5rem;
+  border-radius: 10px;
+}
+
+.modal-2 {
+  background-color: rgb(52, 73, 94);
+  width: 400px;
   text-align: center;
   padding: 2.5rem;
   border-radius: 10px;
@@ -261,6 +277,12 @@ ul {
 
   .modal {
     width: 400px;
+    padding: 2.5rem;
+  }
+
+  .modal-2 {
+    width: 600px;
+    height: 200px;
     padding: 2.5rem;
   }
 
