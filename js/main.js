@@ -18,6 +18,8 @@ var $overlay = document.querySelector('.add-modal');
 var $deleteWatchlistOverlay = document.querySelector('.delete-modal');
 var $cancelButton = document.querySelector('.cancel-button');
 var $confirmButton = document.querySelector('.confirm-button');
+var $loadingSpinner = document.querySelector('.loading-spinner');
+var $networkErrorMessage = document.querySelector('.network-error-message');
 
 function clickBackButton(event) {
   if (event.target.className !== 'back-button') {
@@ -66,6 +68,7 @@ $watchlistButton.addEventListener('click', clickWatchlistButton);
 
 function handleSubmit() {
   event.preventDefault();
+  $loadingSpinner.className = 'row loading-spinner justify-center';
   var xhr = new XMLHttpRequest();
   xhr.open('GET', 'https://api.jikan.moe/v3/search/anime?q=' + $searchInput.value);
   data.searchName = $searchInput.value;
@@ -73,11 +76,24 @@ function handleSubmit() {
   xhr.addEventListener('load', function () {
     data.searchResult = xhr.response.results;
     generateAnimeSearchResults(data);
+
+    if ($loadingSpinner.className === 'row loading-spinner justify-center') {
+      $loadingSpinner.className = 'hidden';
+    }
+
   });
   xhr.send();
   switchViews('search-results');
   data.view = 'search-results';
   $resultText.textContent = 'Search results for  "' + $searchInput.value + '"';
+
+  if (navigator.onLine === false) {
+    $networkErrorMessage.className = 'network-error-message';
+    $loadingSpinner.className = 'hidden';
+  } else {
+    $networkErrorMessage.className = 'hidden';
+  }
+
   document.querySelector('body').className = 'bg-dark-cyan';
   document.querySelector('.nav-bar').className = 'nav-bar row view space-between';
 }

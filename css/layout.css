@@ -71,3 +71,7 @@
 .padding-bottom {
   padding-bottom: 1rem;
 }
+
+.align-start {
+  align-items: start;
+}
