@@ -3,7 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AJAX Project</title>
+  <meta property="og:title" content="AnimeWatchList">
+  <meta property="og:description" content="A web application for anime enthusiasts who want to keep track of anime they plan to watch.">
+  <meta property="og:url" content="https://meganbmartinez.github.io/animewatchlist">
+  <title>AnimeWatchList</title>
   <link rel="icon" href="images/favicon.ico">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -49,6 +52,9 @@
         </div>
         <ul class="searched-list">
         </ul>
+      </div>
+      <div class="no-search-results-message">
+        <h3 class="margin-top">No Search Results Found ☹</h3>
       </div>
     </div>
     <div data-view="anime-info" class="view hidden">
@@ -107,6 +113,20 @@
           </div>
         </div>
       </div>
+    </div>
+    <div class="row hidden loading-spinner justify-center">
+      <div class="lds-ring">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+    <div class="network-error-message hidden">
+      <i class="fas fa-exclamation-circle"></i>
+      <h3 class="empty-message margin-top">
+        Please check your internet connection or try again later.
+      </h3>
     </div>
   </main>
   <script src="js/data.js"></script>
